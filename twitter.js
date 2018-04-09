@@ -21,8 +21,8 @@ function tweets() {
                     console.log("");
                     console.log(tweets[i].created_at);
                     console.log(tweets[i].text);
-                    
-                  }
+
+                }
 
 
 

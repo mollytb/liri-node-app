@@ -21,6 +21,7 @@ function doWhat() {
             }
             if (command === "spotify-this-song") {
                 songStuff();
+                console.log("");
                 //console.log("should spotify");
             }
             if (command === "my-tweets") {
@@ -35,28 +36,28 @@ function doWhat() {
 
 
 };
-function songStuff(){
- 
-var spotify = new Spotify({
-    id: process.env.SPOTIFY_ID,
-    secret: process.env.SPOTIFY_SECRET
-});
+function songStuff() {
+
+    var spotify = new Spotify({
+        id: process.env.SPOTIFY_ID,
+        secret: process.env.SPOTIFY_SECRET
+    });
 
 
-spotify.search( {type: "track", query: title }, function(err, data) {
-    
-    if ( err ) {
-      console.log("error " + err);
-      return;  
-  }
+    spotify.search({ type: "track", query: title }, function (err, data) {
 
-  else{
-  var songInfo = data.tracks.items[0];
-    console.log("Artist: " + songInfo.artists[0].name);
-    console.log("Title: " + songInfo.name);
-    console.log("Album: " + songInfo.album.name);
-    console.log("Link to snippet: " + songInfo.preview_url);
-    
-  };
-});
+        if (err) {
+            console.log("error " + err);
+            return;
+        }
+
+        else {
+            var songInfo = data.tracks.items[0];
+            console.log("Artist: " + songInfo.artists[0].name);
+            console.log("Title: " + songInfo.name);
+            console.log("Album: " + songInfo.album.name);
+            console.log("Link to snippet: " + songInfo.preview_url);
+
+        };
+    });
 };
