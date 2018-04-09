@@ -16,20 +16,13 @@ function tweets() {
 
         function (error, tweets) {
             if (!error) {
-                //I need a for loop to go through these twitter responses
-                for(var i = 0; i < (tweets.text) in tweets) {
-                    console.log("* " + tweets[i].text);
-                    console.log("- " + tweets[i].created_at);
-                }
-                //console.log("* " + tweets[0].text);
-                //console.log("- " + tweets[0].created_at);
-                //console.log("* " + tweets[1].text);
-                //console.log("- " + tweets[1].created_at);
-                //console.log("* " + tweets[2].text);
-                //console.log("- " + tweets[2].created_at);
-                //console.log("Tweet " + tweets[3].text);
-                //console.log("Tweet " + tweets[4].text);
-                //console.log("Tweet " + tweets[5].text);
+                //for loop to go through these twitter responses
+                for (var i = 0; i < tweets.length; i++) {
+                    console.log(tweets[i].created_at);
+                    console.log("");
+                    console.log(tweets[i].text);
+                  }
+
 
 
             }
